@@ -4,7 +4,7 @@
   "description": "RESTful API for managing markdown notes with grammar checking",
   "main": "index.js",
   "scripts": {
-    "swagger": "tsoa spec",
+    "swagger": "tsoa spec-and-routes",
     "tsc": "tsc",
     "dev:swagger": "npm run swagger && npm run dev",
     "dev": "ts-node-dev --transpile-only --respawn src/app.ts",

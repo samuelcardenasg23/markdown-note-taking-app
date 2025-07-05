@@ -5,6 +5,7 @@ interface Note {
     id: number;
     title: string;
     markdownContent: string;
+    tags: string[];
     htmlRendered?: string;
     fileUrl?: string;
     createdAt: Date;

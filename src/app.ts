@@ -4,7 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
-// import { registerRoutes } from './routes/routes';
+import { RegisterRoutes } from './routes/routes';
 
 // initial config
 dotenv.config(); // load environment variables
@@ -39,7 +39,7 @@ app.get('/health', (req, res) => {
 });
 
 // TSOA Routes
-// registerRoutes(app);
+RegisterRoutes(app);
 
 // Swagger Documentation
 try {

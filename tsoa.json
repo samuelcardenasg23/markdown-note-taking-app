@@ -8,6 +8,7 @@
     "name": "Markdown Notes API",
     "description": "RESTful API for managing markdown notes with grammar checking",
     "version": "1.0.0",
+    "license": "ISC",
     "contact": {
       "name": "API Support",
       "email": "support@example.com"
@@ -20,7 +21,6 @@
     ]
   },
   "routes": {
-    "routesDir": "src/routes",
-    "middlewareTemplate": "src/middleware/authentication.ts"
+    "routesDir": "src/routes"
   }
 }
