@@ -4,11 +4,12 @@
   "description": "RESTful API for managing markdown notes with grammar checking",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run tsoa:gen\" \"nodemon\"",
-    "tsoa:gen": "tsoa spec-and-routes",
-    "build": "npm run tsoa:gen && tsc",
-    "start": "node dist/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "swagger": "tsoa spec",
+    "tsc": "tsc",
+    "dev:swagger": "npm run swagger && npm run dev",
+    "dev": "ts-node-dev --transpile-only --respawn src/app.ts",
+    "build": "npm run swagger && tsc",
+    "start": "node dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
     "@types/multer": "^2.0.0",
     "@types/node": "^24.0.10",
     "@types/pg": "^8.15.4",
@@ -45,6 +47,7 @@
     "concurrently": "^9.2.0",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   }
 }

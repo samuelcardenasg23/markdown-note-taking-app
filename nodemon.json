@@ -1,9 +1,0 @@
-{
-  "watch": ["src"],
-  "ext": "ts",
-  "ignore": ["src/routes/*"],
-  "exec": "npm run tsoa:gen && ts-node src/app.ts",
-  "env": {
-    "NODE_ENV": "development"
-  }
-}
