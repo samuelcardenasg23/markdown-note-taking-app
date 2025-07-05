@@ -5,7 +5,6 @@ interface Note {
     id: number;
     title: string;
     markdownContent: string;
-    tags: string[];
     htmlRendered?: string;
     fileUrl?: string;
     createdAt: Date;
@@ -18,7 +17,6 @@ interface Note {
 interface CreateNoteRequest {
     title: string;
     markdownContent: string;
-    tags?: string[];
 }
 
 /**
@@ -27,7 +25,6 @@ interface CreateNoteRequest {
 interface UpdateNoteRequest {
     title?: string;
     markdownContent?: string;
-    tags?: string[];
 }
 
 export { Note, CreateNoteRequest, UpdateNoteRequest };

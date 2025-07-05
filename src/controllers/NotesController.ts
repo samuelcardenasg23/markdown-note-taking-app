@@ -23,7 +23,6 @@ export class NotesController extends Controller {
                 id: 1,
                 title: 'Note 1',
                 markdownContent: 'This is the content of note 1',
-                tags: ['tag1', 'tag2'],
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
@@ -31,7 +30,6 @@ export class NotesController extends Controller {
                 id: 2,
                 title: 'Note 2',
                 markdownContent: 'This is the content of note 2',
-                tags: ['tag3', 'tag4'],
                 createdAt: new Date(),
                 updatedAt: new Date(),
             }
@@ -51,7 +49,6 @@ export class NotesController extends Controller {
             id: 1,
             title: 'Note 1',
             markdownContent: 'This is the content of note 1',
-            tags: ['tag1', 'tag2'],
             createdAt: new Date(),
             updatedAt: new Date(),
         }
@@ -70,7 +67,6 @@ export class NotesController extends Controller {
             id: 1,
             title: request.title,
             markdownContent: request.markdownContent,
-            tags: request.tags || [],
             createdAt: new Date(),
             updatedAt: new Date(),
         }

@@ -145,3 +145,5 @@ docs/swagger.json
 
 # Uploaded files
 uploads/
+
+.cursorignore

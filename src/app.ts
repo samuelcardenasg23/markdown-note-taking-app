@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
 import { RegisterRoutes } from './routes/routes';
+import { initializeDatabase } from './database/DataSource';
 
 // initial config
 dotenv.config(); // load environment variables
@@ -83,52 +84,20 @@ app.use((err: Error, req: express.Request, res: express.Response, next: express.
     });
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-    console.log(`Swagger documentation: http://localhost:${PORT}/swagger`);
-    console.log(`Health check: http://localhost:${PORT}/health`);
-    console.log(`API documentation: http://localhost:${PORT}/swagger.json`);
-});
+// Initialize database
+const startServer = async () => {
+    // Initialize database
+    await initializeDatabase();
+
+    // Start the server
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+        console.log(`Swagger documentation: http://localhost:${PORT}/swagger`);
+        console.log(`Health check: http://localhost:${PORT}/health`);
+        console.log(`API documentation: http://localhost:${PORT}/swagger.json`);
+    });
+};
+
+startServer();
 
 export default app;
-
-// import express from 'express';
-// import dotenv from 'dotenv';
-
-// // Load environment variables
-// dotenv.config();
-
-// console.log('Port:', process.env.PORT);
-// console.log('Node environment:', process.env.NODE_ENV);
-// console.log('DB host:', process.env.DB_HOST);
-
-// const app = express();
-// const PORT = process.env.PORT || 3000;
-
-// // Minimal middleware
-// app.use(express.json());
-
-// // Single route
-// app.get('/health', (req, res) => {
-//     res.json({ 
-//         status: 'ok',
-//         timestamp: new Date().toISOString()
-//     });
-// });
-
-// // 404 handler
-// app.use((req, res) => {
-//     res.status(404).json({
-//         error: 'Not Found',
-//         message: `Route ${req.method} ${req.originalUrl} not found`
-//     });
-// });
-
-// // Start server
-// app.listen(PORT, () => {
-//     console.log(`✅ Server running on http://localhost:${PORT}`);
-//     console.log(`❤️  Health check: http://localhost:${PORT}/health`);
-// });
-
-// export default app;
