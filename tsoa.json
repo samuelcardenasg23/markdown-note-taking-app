@@ -1,0 +1,26 @@
+{
+  "entryFile": "src/app.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/controllers/**/*Controller.ts"],
+  "spec": {
+    "outputDirectory": "docs",
+    "specVersion": 3,
+    "name": "Markdown Notes API",
+    "description": "RESTful API for managing markdown notes with grammar checking",
+    "version": "1.0.0",
+    "contact": {
+      "name": "API Support",
+      "email": "support@example.com"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000",
+        "description": "Development server"
+      }
+    ]
+  },
+  "routes": {
+    "routesDir": "src/routes",
+    "middlewareTemplate": "src/middleware/authentication.ts"
+  }
+}
