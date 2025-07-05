@@ -11,7 +11,7 @@ export class Note {
     @Column('text')
     markdownContent!: string;
 
-    @Column('text')
+    @Column('text', { nullable: true })
     htmlRendered?: string;
 
     @Column({ nullable: true })

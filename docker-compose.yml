@@ -48,6 +48,10 @@ services:
       DB_NAME: ${DB_NAME}
       PORT: 3000
       NODE_ENV: development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev:swagger
 
 # 9. Define the named volumes we used above
 volumes:
