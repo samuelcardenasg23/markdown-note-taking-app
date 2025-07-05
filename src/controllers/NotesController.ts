@@ -2,22 +2,22 @@ import { Request, Response } from 'express';
 import { Note, CreateNoteRequest, UpdateNoteRequest } from '../models';
 import { Body, Controller, Delete, Get, Path, Post, Put, Route, Tags } from 'tsoa';
 
-
-
-
-
-
-
+/**
+ * Controller for managing markdown notes
+ * @example
+ * This controller provides endpoints for CRUD operations on notes
+ */
 @Route("api/notes")
 @Tags("Notes")
 export class NotesController extends Controller {
     /**
      * Get all notes
+     * @summary Retrieve all notes
      * @returns An array of notes
      */
     @Get("/")
-    // hardcoded response
     public async getAllNotes(): Promise<Note[]> {
+        // hardcoded response
         return [
             {
                 id: 1,
@@ -40,6 +40,7 @@ export class NotesController extends Controller {
 
     /**
      * Get a single note
+     * @summary Retrieve a note by ID
      * @param id The ID of the note to get
      * @returns The note
      */
@@ -58,6 +59,7 @@ export class NotesController extends Controller {
 
     /**
      * Create a new note
+     * @summary Create a new note
      * @param request The request body
      * @returns The created note
      */
